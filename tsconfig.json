@@ -1,4 +1,6 @@
 {
+  "include": ["src/**/*", "functions/csv.ts", "functions/types.ts"],
+  "exclude": ["functions/**/*"],
   "compilerOptions": {
     "target": "es5",
     "lib": [
@@ -20,7 +22,4 @@
     "noEmit": true,
     "jsx": "react-jsx"
   },
-  "include": [
-    "src"
-  ]
 }
