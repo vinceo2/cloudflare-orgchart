@@ -1,13 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {ReactComponent as Logo} from './assets/logo.svg'
 import {ReactComponent as DarkMode} from './assets/dark-mode.svg'
+import { wrap } from 'module';
+import { initDepartments, buildDepartmentTables } from './util/departments';
+import { lightBackground1, h1Style, lightBackground2, h2Style, themeRed } from './util/styles';
 
 function App() {
-  const h1Style = { fontFamily: 'Arial', fontWeight: '500', fontSize: '34pt' };
-  const h2Style = { fontFamily: 'Arial', fontWeight: '500', fontSize: '28pt' };
-  const lightBackground1 = '#f2f2f2';
-  const lightBackground2 = '#bfbfbf';
-  const themeRed = '#EA4D3D'
+  const [departments, setDepartments] = useState(initDepartments())
+  const departmentTables = buildDepartmentTables(departments)
+
   return (
     <>
       <div style={{display:'flex', padding:'20px 10px 15px 10px', backgroundColor:lightBackground1}}>
@@ -41,8 +42,8 @@ function App() {
         <button style={{width:'100px', padding:'10px 0', border: 'none', backgroundColor:themeRed, fontWeight:'bold', fontSize:'14px', alignSelf:'flex-end'}}>
           (Edit) Filter
         </button>
+        {departmentTables}
       </div>
-
     </>
   );
 }
