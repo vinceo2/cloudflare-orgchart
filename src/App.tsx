@@ -64,12 +64,12 @@ function App() {
           <Logo style={{}}/>
         </div>
         <div style={{flex:4, display:'flex', justifyContent:'center', alignItems:'center'}}>
-          <h1 style={h1Style} className={theme + '-color'}>Cloudflair Orgchart</h1>
+          <h1 style={h1Style} className={theme + '-color'}>Cloudflare Orgchart</h1>
         </div>
         <div style={{flex:1, display:'flex', justifyContent:'flex-end', alignItems:'center'}}>
           {theme === 'light' ? 
-            <DarkMode onClick={() => setTheme('dark')} style={{width:52, height:52, marginRight:30}}/> :
-            <LightMode onClick={() => setTheme('light')} style={{width:52, height:52, marginRight:30}}/>
+            <DarkMode onClick={() => setTheme('dark')} style={{width:52, height:52, marginRight:30}} className='clickable'/> :
+            <LightMode onClick={() => setTheme('light')} style={{width:52, height:52, marginRight:30}} className='clickable'/>
           }
           <Logo />
         </div>
@@ -79,15 +79,13 @@ function App() {
           Features
         </h2>
         <ul style={{fontSize:'16pt', fontFamily:'Arial', lineHeight:'26pt', marginTop:20}} className={theme + '-color'}>
-          <li>Text showcasing feature 1</li>
-          <li>Text showcasing feature 2</li>
-          <li>Text showcasing feature 3</li>
-          <li>Text showcasing feature 4</li>
-          <li>Text showcasing feature 5</li>
+          <li>Collapsible Tables displaying the departments and employees of the orgchart</li>
+          <li>Filter employees by name or office using regular expressions, or by skill</li>
+          <li>Toggle between dark mode and light mode</li>
         </ul>
       </div>
       <div style={{display:'flex', flexDirection:'column', padding:'30px 30px',}} className={theme + '-background-1'}>
-        <button onClick={handleFilterButtonClick}  style={{width:'100px', padding:'10px 0', border: 'none', backgroundColor:themeRed, fontWeight:'bold', fontSize:'14px', alignSelf:'flex-end'}}>
+        <button onClick={handleFilterButtonClick}  style={{width:'100px', padding:'10px 0', border: 'none', backgroundColor:themeRed, fontWeight:'bold', fontSize:'14px', alignSelf:'flex-end'}} className='clickable'>
           Filter
         </button>
         {departmentTables}
@@ -96,7 +94,7 @@ function App() {
     {!isModalHidden && <div style={{backgroundColor:'rgba(0,0,0,0.5)', zIndex:1, position:'fixed', width:'100%', height:'100%', top:0}}>
       <div style={{width:'60%', margin:'10% auto'}} className={theme + '-background-1'}>
         <div style={{display:'flex', alignItems:'center', padding:'15px 0'}}>
-          <Close style={{flex:.5}} onClick={handleModalExitClick}/>
+          <Close style={{flex:.5}} onClick={handleModalExitClick} className='clickable'/>
           <h2 style={{...h2Style, flex:6, textAlign:'center'}} className={theme + '-color'}>Filter Employees By...</h2>
           <div style={{flex:.5}}/>
         </div>
@@ -113,7 +111,7 @@ function App() {
             <p style={{flex:1, display:'inline-block', fontSize:'16pt', fontFamily:'Arial'}} className={theme + '-color'}>Skill:</p>
             <input value={filterSkill} onInput={(event) => setFilterSkill((event.target as HTMLInputElement).value)} style={{flex:3, display:'inline-block', border:'1px solid gray', font: '16pt Arial'}}></input>
           </div>
-          <button onClick={handleFilterUpdate} style={{width:'100px', padding:'10px 0', border: 'none', backgroundColor:themeRed, fontWeight:'bold', fontSize:'14px', alignSelf:'flex-end', margin:'20px 0'}}>
+          <button onClick={handleFilterUpdate} style={{width:'100px', padding:'10px 0', border: 'none', backgroundColor:themeRed, fontWeight:'bold', fontSize:'14px', alignSelf:'flex-end', margin:'20px 0'}} className='clickable'>
             Apply
           </button>
         </div>

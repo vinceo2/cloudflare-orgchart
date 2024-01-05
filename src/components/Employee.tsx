@@ -17,10 +17,10 @@ export function Employee(props: { name: string; isManager: boolean; office: stri
     <div style={{display: 'flex', width: '250px', alignItems: 'center' }} className={theme + '-background-3'}>
       {theme === 'light' ? <ProfilePicture style={{ flex: 1 }}/> : <ProfilePictureDark style={{flex:1}}/>}
       <div style={{ flex: 2 }}>
-        <p style={{ display: 'block', fontSize: '14pt', font: 'Arial' }} className={theme + '-color'}>{props.name}</p>
-        {props.isManager && <p style={{ display: 'block', fontSize: '12pt', font: 'Arial' }} className={theme + '-color'}>Manager</p>}
-        <p style={{ display: 'block', fontSize: '12pt', font: 'Arial', color: 'gray' }}>{props.office}</p>
-        <p style={{ display: 'block', font: 'Arial', fontSize: '12pt', color: 'gray', fontStyle: 'italic' }}>{props.skills.join(", ")}</p>
+        <p style={{ display: 'block', fontSize: '14pt',  }} className={theme + '-color'}>{props.name}</p>
+        {props.isManager && <p style={{ display: 'block', fontSize: '12pt',  }} className={theme + '-color'}>Manager</p>}
+        <p style={{ display: 'block', fontSize: '12pt',color: 'gray' }}>{props.office}</p>
+        <p style={{ display: 'block', fontSize: '12pt', color: 'gray', fontStyle: 'italic' }}>{props.skills.join(", ")}</p>
       </div>
     </div>
   );

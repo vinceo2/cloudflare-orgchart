@@ -16,13 +16,13 @@ export function DepartmentTable(props: { manager: React.ReactNode; isManagerHidd
     setExpanded((old) => !old);
   }
 
-  const headerIcon = isExpanded ? <Collapse style={{ flex: 0.5 }} onClick={handleClick} /> : <Expand style={{ flex: 0.5 }} onClick={handleClick} />;
+  const headerIcon = isExpanded ? <Collapse style={{ flex: 0.5 }} onClick={handleClick} className='clickable'/> : <Expand style={{ flex: 0.5 }} onClick={handleClick} className='clickable'/>;
 
   return (
     <div style={{ display: 'flex', flexDirection: 'column', margin: '10px 0', }}>
       <div style={{ display: 'flex', backgroundColor: themeRed, padding: '10px 0px' }}>
         {headerIcon}
-        <p style={{ flex: 9, fontWeight: 'bold', font: 'Arial', fontSize: '16pt', color: 'white', textAlign: 'center' }}>
+        <p style={{ flex: 9, fontWeight: 'bold', fontFamily:'Arial', fontSize: '16pt', color: 'white', textAlign: 'center' }}>
           {props.departmentName}
         </p>
         <div style={{ flex: 0.5 }}></div>

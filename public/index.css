@@ -35,3 +35,7 @@
 .dark-color {
     color: white;
 }
+
+.clickable {
+    cursor: pointer;
+}
