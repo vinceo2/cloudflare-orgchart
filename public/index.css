@@ -3,3 +3,35 @@
     margin: 0;
     box-sizing: border-box;
 }
+
+.light-background-1 {
+    background-color: #f2f2f2;
+}
+
+.light-background-2 {
+    background-color: #bfbfbf;
+}
+
+.light-background-3 {
+    background-color: white;
+}
+
+.dark-background-1 {
+    background-color: #121212;
+}
+
+.dark-background-2 {
+    background-color: #303030;
+}
+
+.dark-background-3 {
+    background-color: black;
+}
+
+.light-color {
+    color: black;
+}
+
+.dark-color {
+    color: white;
+}

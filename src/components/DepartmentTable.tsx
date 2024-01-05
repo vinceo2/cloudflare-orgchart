@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { ReactComponent as Collapse } from '../assets/collapse.svg';
 import { ReactComponent as Expand } from '../assets/expand.svg';
 import { themeRed, lightBackground2 } from '../util/styles';
+import { ThemeContext } from '../ThemeContext';
 
 /**
  * Component for displaying a department's employees
@@ -9,6 +10,7 @@ import { themeRed, lightBackground2 } from '../util/styles';
 
 export function DepartmentTable(props: { manager: React.ReactNode; isManagerHidden: boolean; departmentName: string; children?: React.ReactNode; }): React.JSX.Element {
   const [isExpanded, setExpanded] = useState(true);
+  const theme = useContext(ThemeContext)
 
   function handleClick() {
     setExpanded((old) => !old);
@@ -25,7 +27,7 @@ export function DepartmentTable(props: { manager: React.ReactNode; isManagerHidd
         </p>
         <div style={{ flex: 0.5 }}></div>
       </div>
-      {isExpanded && <div style={{ backgroundColor: lightBackground2, paddingTop: 5 }}>
+      {isExpanded && <div style={{paddingTop: 5 }} className={theme + '-background-2'}>
         {!props.isManagerHidden && <div style={{ display: 'flex', justifyContent: 'center', margin: '5px 0' }}>
           {props.manager}
         </div>}

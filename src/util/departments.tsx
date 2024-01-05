@@ -43,3 +43,12 @@ export function buildDepartmentTables(departments: department[]) {
 
   return (<>{departmentTables}</>);
 }
+
+/**
+ * @returns the number of employees in a list of departments
+ */
+export function sumEmployees(departments: department[]) {
+  let count = 0
+  departments.forEach((department) => count += department.employees.length)
+  return count
+}
