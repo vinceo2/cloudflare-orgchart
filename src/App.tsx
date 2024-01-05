@@ -1,11 +1,11 @@
-import React, { useState, useContext } from 'react';
+import { useState} from 'react';
 import {ReactComponent as Logo} from './assets/logo.svg'
 import {ReactComponent as DarkMode} from './assets/dark-mode.svg'
 import {ReactComponent as LightMode} from './assets/light-mode.svg'
 import {ReactComponent as Close} from './assets/close.svg'
 import { ThemeContext } from './ThemeContext';
-import { initDepartments, buildDepartmentTables, sumEmployees } from './util/departments';
-import { lightBackground1, h1Style, lightBackground2, h2Style, themeRed } from './util/styles';
+import { initDepartments, buildDepartmentTables } from './util/departments';
+import {h1Style, h2Style, themeRed } from './util/styles';
 
 function App() {
   const [departments, setDepartments] = useState(initDepartments())

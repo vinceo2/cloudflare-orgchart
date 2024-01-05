@@ -1,7 +1,7 @@
 import React, { useContext, useState } from 'react';
 import { ReactComponent as Collapse } from '../assets/collapse.svg';
 import { ReactComponent as Expand } from '../assets/expand.svg';
-import { themeRed, lightBackground2 } from '../util/styles';
+import { themeRed } from '../util/styles';
 import { ThemeContext } from '../ThemeContext';
 
 /**

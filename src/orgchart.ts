@@ -1,4 +1,4 @@
-export default {
+const orgchart = {
     "organization": {
         "departments": [
             {
@@ -1108,3 +1108,5 @@ export default {
         ]
     }
 }
+
+export default orgchart
