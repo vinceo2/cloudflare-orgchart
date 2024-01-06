@@ -22,10 +22,10 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
 
 	for (const department of org.organization.departments) {
 		for (const employee of department.employees) {
-			if (query.name && employee.name.match(query.name).length === 0) {
+			if (query.name && employee.name.match(query.name) === null) {
 				continue
 			}
-			if (query.department && employee.department.match(query.department).length === 0) {
+			if (query.department && employee.department.match(query.department) === null) {
 				continue
 			}
 			if (query.minSalary && query.minSalary > employee.salary) {
@@ -34,7 +34,7 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
 			if (query.maxSalary && query.maxSalary < employee.salary) {
 				continue
 			}
-			if (query.office && employee.office.match(query.office).length === 0) {
+			if (query.office && employee.office.match(query.office) === null) {
 				continue
 			}
 			if (query.skill && !employee.skills.includes(query.skill)) {
