@@ -7,8 +7,8 @@ interface Env {
 
 export const onRequestGet: PagesFunction<Env> = async (context) => {
     const kvKey = context.env.ORGANIZATION_KV_KEY
-    console.log('context:' + context)
-    console.log('context.env:' + context.env)
+    console.log('context:' + JSON.stringify(context))
+    console.log('context.env:' + JSON.stringify(context.env))
 	const organization = await context.env.organization.get(kvKey);
  	return new Response(organization);
 }
